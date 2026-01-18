@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "WebFetch(domain:docs.docker.com)",
+      "WebSearch",
+      "Bash(.venv/bin/pip:*)",
+      "Bash(.venv/bin/python3 skill-creator/scripts/package_skill.py:*)",
+      "Bash(ls:*)",
+      "Bash(unzip:*)",
+      "Bash(tree:*)"
+    ]
+  }
+}
