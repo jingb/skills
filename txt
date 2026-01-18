@@ -1,0 +1,31 @@
+
+openrouter  
+
+我希望创建的技能是关于团队内函数的设计风格及原则，下面尝试以java为例阐述我的理念
+
+如果当前有个获取手机号归属地的功能，函数声明有些人可能会这么设计 String getPhoneLocation(long phoneNumber);
+有些可能是这么设计 String getPhoneLocation(HttpRequest request); 其用意是在request里面通过获取请求body然后再取到手机号再做归属地查询的动作。但毫无疑问第一种设计风格肯定是更好的，因为其函数入参返回值语义更加清晰，而第二种方式把 HttpRequest 作为函数的参数，其设计就耦合了http协议，本来函数的功能和协议就没有什么关系 
+
+上面只是举了一个例子，其实函数风格本身有很多细节入入参和返回值的字段设计，异常的声明等。
+我是想把一些风格和原则通过一些示例给阐述清楚，然后让团队尽可能遵循。其次是大家在使用AI ide等开发的时候，其代码补全也能遵照这个来，另外就是code review阶段也是，尽量遵照这些原则去review给意见。
+
+针对我上面的想法，其是否适合通过skill的方式来实现，另外是如果适合，它属于哪种类型的skill
+
+
+如果这些原则不止一个，比方有个是关于函数声明设计的，有些是关于如何打日志的，有些是关于如何做监控指标埋点的等等，我应该实现成多个skill还是一个skill
+
+
+希望这些风格和原则是可以跨java及python至少两种语言的，希望描述尽量抽象，在具体使用时根据当时的语言去选择示例里对应的语言做参考
+
+选择什么样的自由度  高、中、还是低
+
+
+浪费token的经历 https://www.reddit.com/r/ClaudeAI/comments/1opxgq4/i_was_wrong_about_agent_skills_and_how_i_refactor/
+
+https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices
+1. 写个skill之后，针对同一个编程任务 让claude来编写个试试
+2. 创建可验证的中间输出
+
+claude解释其不同能力的适用场景
+https://code.claude.com/docs/en/skills#where-skills-live
+
